@@ -1,0 +1,392 @@
+/* ─────────────────────────────────────────
+   TESO GRAPHICS – Digital Business Card
+   ───────────────────────────────────────── */
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --beige:       #C9B59A;
+  --beige-light: #EDE0CF;
+  --beige-bg:    #F4EDE3;
+  --black:       #141414;
+  --black-soft:  #1E1E1E;
+  --white:       #FFFFFF;
+  --white-off:   #F7F3EE;
+  --text-muted:  #8a7968;
+  --radius-card: 28px;
+  --font-sans:   'Montserrat', sans-serif;
+  --font-serif:  'Cormorant Garamond', serif;
+  --transition:  0.22s ease;
+}
+
+html {
+  font-size: 16px;
+  -webkit-font-smoothing: antialiased;
+}
+
+body {
+  background-color: var(--beige-bg);
+  font-family: var(--font-sans);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 40px 16px 24px;
+  background-image:
+    radial-gradient(ellipse at 20% 10%, rgba(201,181,154,0.35) 0%, transparent 55%),
+    radial-gradient(ellipse at 80% 90%, rgba(201,181,154,0.25) 0%, transparent 50%);
+}
+
+/* ── CARD WRAPPER ───────────────────────── */
+
+.card-wrapper {
+  width: 100%;
+  max-width: 420px;
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.card {
+  width: 100%;
+  background: var(--white-off);
+  border-radius: var(--radius-card);
+  overflow: hidden;
+  box-shadow:
+    0 4px 6px rgba(0,0,0,0.04),
+    0 12px 40px rgba(0,0,0,0.10),
+    0 2px 2px rgba(201,181,154,0.3);
+}
+
+/* ── HERO ───────────────────────────────── */
+
+.hero {
+  background: var(--beige-light);
+  padding: 44px 32px 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.hero::before {
+  content: '';
+  position: absolute;
+  top: -30px;
+  right: -30px;
+  width: 140px;
+  height: 140px;
+  border-radius: 50%;
+  background: rgba(201,181,154,0.25);
+}
+
+.hero::after {
+  content: '';
+  position: absolute;
+  bottom: -40px;
+  left: -20px;
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  background: rgba(201,181,154,0.2);
+}
+
+.logo-badge {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  line-height: 1;
+  position: relative;
+  z-index: 1;
+  gap: 6px;
+}
+
+.logo-teso {
+  font-family: var(--font-sans);
+  font-weight: 800;
+  font-size: clamp(2.6rem, 10vw, 3.4rem);
+  letter-spacing: 0.18em;
+  color: var(--black);
+  text-transform: uppercase;
+}
+
+.logo-graphics {
+  font-family: var(--font-sans);
+  font-weight: 300;
+  font-size: clamp(0.75rem, 3vw, 0.9rem);
+  letter-spacing: 0.42em;
+  color: var(--black-soft);
+  text-transform: uppercase;
+}
+
+.logo-dot {
+  color: var(--beige);
+  font-weight: 700;
+}
+
+.logo-com {
+  color: var(--text-muted);
+}
+
+/* ── IDENTITY ───────────────────────────── */
+
+.identity {
+  background: var(--black);
+  padding: 36px 32px 32px;
+  position: relative;
+  overflow: hidden;
+}
+
+.identity::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 3px;
+  height: 100%;
+  background: linear-gradient(180deg, var(--beige) 0%, transparent 100%);
+}
+
+.identity-inner {
+  position: relative;
+  z-index: 1;
+}
+
+.label {
+  font-size: 0.62rem;
+  font-weight: 600;
+  letter-spacing: 0.32em;
+  text-transform: uppercase;
+  color: var(--beige);
+  margin-bottom: 12px;
+}
+
+.name {
+  font-family: var(--font-sans);
+  font-weight: 700;
+  font-size: clamp(2rem, 8vw, 2.8rem);
+  line-height: 1.05;
+  color: var(--white);
+  letter-spacing: -0.01em;
+  margin-bottom: 14px;
+}
+
+.speciality {
+  font-size: 0.72rem;
+  font-weight: 400;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+}
+
+/* ── TAGLINE ────────────────────────────── */
+
+.tagline-section {
+  background: var(--black-soft);
+  padding: 26px 32px;
+  border-top: 1px solid rgba(255,255,255,0.04);
+}
+
+.tagline {
+  font-family: var(--font-serif);
+  font-size: clamp(1.05rem, 3.5vw, 1.2rem);
+  font-weight: 400;
+  line-height: 1.5;
+  color: var(--beige-light);
+  text-align: center;
+}
+
+.tagline em {
+  font-style: italic;
+  color: var(--beige);
+}
+
+/* ── DIVIDER ────────────────────────────── */
+
+.divider {
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--beige), transparent);
+  opacity: 0.4;
+  margin: 0 32px;
+}
+
+/* ── CONTACT ────────────────────────────── */
+
+.contact {
+  background: var(--white-off);
+  padding: 28px 32px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.contact-item {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 10px 14px;
+  border-radius: 10px;
+  text-decoration: none;
+  color: var(--black);
+  transition: background var(--transition), transform var(--transition);
+}
+
+.contact-item:hover {
+  background: rgba(201,181,154,0.18);
+  transform: translateX(3px);
+}
+
+.contact-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  border-radius: 9px;
+  background: var(--beige-light);
+  flex-shrink: 0;
+  transition: background var(--transition);
+}
+
+.contact-item:hover .contact-icon {
+  background: var(--beige);
+}
+
+.contact-icon svg {
+  width: 16px;
+  height: 16px;
+  stroke: var(--black-soft);
+  stroke-width: 2;
+}
+
+.contact-text {
+  font-size: 0.82rem;
+  font-weight: 500;
+  letter-spacing: 0.02em;
+  color: var(--black-soft);
+}
+
+/* ── CTA BUTTON ─────────────────────────── */
+
+.cta-section {
+  background: var(--white-off);
+  padding: 4px 32px 36px;
+}
+
+.btn-save {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 15px 24px;
+  background: var(--black);
+  color: var(--white);
+  border: none;
+  border-radius: 12px;
+  font-family: var(--font-sans);
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: background var(--transition), transform var(--transition), box-shadow var(--transition);
+  position: relative;
+  overflow: hidden;
+}
+
+.btn-save::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, rgba(201,181,154,0.15) 0%, transparent 60%);
+  pointer-events: none;
+}
+
+.btn-save svg {
+  width: 16px;
+  height: 16px;
+  stroke: var(--beige);
+  stroke-width: 2.2;
+  flex-shrink: 0;
+}
+
+.btn-save:hover {
+  background: var(--black-soft);
+  box-shadow: 0 8px 24px rgba(0,0,0,0.2);
+  transform: translateY(-1px);
+}
+
+.btn-save:active {
+  transform: translateY(0);
+  box-shadow: 0 3px 10px rgba(0,0,0,0.15);
+}
+
+/* ── FOOTER ─────────────────────────────── */
+
+.footer {
+  margin-top: 24px;
+  text-align: center;
+  padding: 0 16px 8px;
+}
+
+.footer p {
+  font-size: 0.62rem;
+  font-weight: 500;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  line-height: 1.8;
+}
+
+.footer a {
+  color: var(--black);
+  text-decoration: none;
+  font-weight: 700;
+  transition: color var(--transition);
+}
+
+.footer a:hover {
+  color: var(--beige);
+}
+
+/* ── RESPONSIVE ─────────────────────────── */
+
+@media (max-width: 440px) {
+  body {
+    padding: 24px 12px 20px;
+  }
+
+  .hero {
+    padding: 36px 24px 28px;
+  }
+
+  .identity,
+  .tagline-section,
+  .contact,
+  .cta-section {
+    padding-left: 24px;
+    padding-right: 24px;
+  }
+
+  .divider {
+    margin: 0 24px;
+  }
+}
+
+@media (min-width: 768px) {
+  .card-wrapper {
+    max-width: 460px;
+  }
+
+  body {
+    padding: 60px 24px 32px;
+  }
+}
