@@ -9,7 +9,7 @@
   <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
 
   <!-- Lucide Icons -->
   <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
@@ -21,31 +21,25 @@
   <main class="card-wrapper">
     <div class="card">
 
-      <!-- ── HERO ── -->
+      <!-- ── HERO: logo image ── -->
       <section class="hero">
-        <div class="logo-badge">
-          <span class="logo-teso">TESO</span>
-          <span class="logo-graphics">GRAPHICS<span class="logo-dot">.</span><span class="logo-com">com</span></span>
-        </div>
+        <img
+          src="images/tesographics_LOGO.png"
+          alt="TESO Graphics logo"
+          class="hero-logo"
+        />
       </section>
 
-      <!-- ── NAME & TITLE ── -->
+      <!-- ── IDENTITY BAR ── -->
       <section class="identity">
-        <div class="identity-inner">
-          <p class="label">Graphic Designer</p>
-          <h1 class="name">Alirio<br/>Castaneda</h1>
-          <p class="speciality">Digital &amp; Print Specialist</p>
-        </div>
-        <div class="identity-accent"></div>
+        <h1 class="name">Alirio Castaneda</h1>
+        <p class="title">Graphic Designer | Digital &amp; Print Specialist</p>
       </section>
 
       <!-- ── TAGLINE ── -->
       <section class="tagline-section">
-        <p class="tagline">"Bold Design for<br/><em>Digital &amp; Print Worlds</em>"</p>
+        <p class="tagline">Bold Design for Digital &amp; Print Worlds</p>
       </section>
-
-      <!-- ── DIVIDER ── -->
-      <div class="divider"></div>
 
       <!-- ── CONTACT ── -->
       <section class="contact">
@@ -66,7 +60,7 @@
       <!-- ── SAVE CONTACT ── -->
       <section class="cta-section">
         <button class="btn-save" id="saveContact" aria-label="Download vCard">
-          <i data-lucide="user-plus"></i>
+          <span class="btn-icon"><i data-lucide="arrow-down-circle"></i></span>
           <span>SAVE CONTACT</span>
         </button>
       </section>
@@ -76,7 +70,7 @@
 
   <!-- ── FOOTER ── -->
   <footer class="footer">
-    <p>GET YOUR OWN DIGITAL BUSINESS CARD AT&nbsp;
+    <p>GET YOUR OWN DIGITAL BUSINESS CARD AT&nbsp;&nbsp;
       <a href="https://tesographics.com" target="_blank" rel="noopener">Tesographics.com</a>
     </p>
   </footer>
