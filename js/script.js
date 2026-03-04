@@ -4,7 +4,7 @@
 
 document.getElementById('saveContact').addEventListener('click', function () {
 
-  // Build vCard following RFC 2426 (v3.0) — CRLF required between every line
+  // vCard 3.0 — RFC 2426 — CRLF line endings required
   const lines = [
     'BEGIN:VCARD',
     'VERSION:3.0',
@@ -12,10 +12,9 @@ document.getElementById('saveContact').addEventListener('click', function () {
     'N:Castaneda;Alirio;;;',
     'ORG:TESO Graphics',
     'TITLE:Graphic Designer | Digital & Print Specialist',
-    'TEL;TYPE=CELL,VOICE:+13035253023',
-    'EMAIL;TYPE=WORK,INTERNET:studio@tesographics.com',
-    'URL;TYPE=WORK:https://tesographics.com',
-    'NOTE:Bold Design for Digital & Print Worlds',
+    'TEL;TYPE=WORK,VOICE:(303) 525 3023',
+    'EMAIL;TYPE=INTERNET:studio@tesographics.com',
+    'URL:https://tesographics.com',
     'END:VCARD',
     ''          // trailing CRLF required by spec
   ];
