@@ -277,7 +277,7 @@ body {
 
 .share-section {
   background: var(--white);
-  padding: 18px 20px 8px;
+  padding: 14px 20px 4px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -303,8 +303,11 @@ body {
   transition: background 0.25s ease, transform 0.15s ease;
 }
 
-.btn-share:hover {
-  background: #333;
+.btn-share:hover,
+.btn-share:focus {
+  background: #C9B59A;
+  border-color: #C9B59A;
+  color: #1a1a1a;
   transform: translateY(-1px);
 }
 
@@ -318,6 +321,12 @@ body {
   stroke: #ffffff;
   stroke-width: 2.2;
   flex-shrink: 0;
+  transition: stroke 0.25s ease;
+}
+
+.btn-share:hover svg,
+.btn-share:focus svg {
+  stroke: #1a1a1a;
 }
 
 .share-tooltip {
