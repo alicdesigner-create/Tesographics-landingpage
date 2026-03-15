@@ -42,3 +42,42 @@ document.getElementById('saveContact').addEventListener('click', function () {
     setTimeout(() => URL.revokeObjectURL(url), 1000);
   }
 });
+
+// ─────────────────────────────────────────
+//  SHARE BUTTON – Web Share API + fallback
+// ─────────────────────────────────────────
+
+document.getElementById('shareBtn').addEventListener('click', async function () {
+  const shareData = {
+    title: 'TESO Graphics',
+    text: 'Alirio Castaneda - Graphic Designer | Digital & Print Specialist',
+    url: window.location.href
+  };
+
+  if (navigator.share) {
+    try {
+      await navigator.share(shareData);
+    } catch (err) {
+      // User cancelled — do nothing
+    }
+  } else {
+    // Fallback: copy URL to clipboard and show tooltip
+    try {
+      await navigator.clipboard.writeText(window.location.href);
+    } catch (err) {
+      // Legacy fallback for older browsers
+      const ta = document.createElement('textarea');
+      ta.value = window.location.href;
+      ta.style.position = 'fixed';
+      ta.style.opacity = '0';
+      document.body.appendChild(ta);
+      ta.select();
+      document.execCommand('copy');
+      document.body.removeChild(ta);
+    }
+
+    const tooltip = document.getElementById('shareTooltip');
+    tooltip.classList.add('visible');
+    setTimeout(() => tooltip.classList.remove('visible'), 2200);
+  }
+});
